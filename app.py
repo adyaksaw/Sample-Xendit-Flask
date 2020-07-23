@@ -31,5 +31,10 @@ def pay():
         return vars(e)
 
 
+@app.route("/webhook", methods=["POST"])
+def catch_webhook():
+    print(request.json)
+    return {}
+
 if __name__ == "__main__":
     app.run(debug=True)
